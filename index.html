@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz 14 de Febrero</title>
+    <style>
+        body {
+            background-color: #FF6F61;
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: lightgreen;
+            color: black;
+        }
+        .no {
+            background-color: red;
+            color: white;
+        }
+    </style>
+    <script>
+        function respuestaSi() {
+            alert("¡Sabía que dirías que sí! 💖");
+        }
+        function respuestaNo() {
+            alert("Oh, qué pena 😢");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Feliz 14 de febrero</h1>
+        <p>¿Te gustaría ser mi Valentín?</p>
+        <div class="buttons">
+            <button class="yes" onclick="respuestaSi()">SÍ</button>
+            <button class="no" onclick="respuestaNo()">NO</button>
+        </div>
+    </div>
+</body>
+</html>
