@@ -1,0 +1,135 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Snowburst One', cursive;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.decoracion {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permite hacer clic a través de los elementos */
+}
+
+/* Corazones */
+.corazon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #e74c3c;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 70%, 18% 100%, 0% 38%);
+    animation: caer 8s linear infinite;
+}
+
+/* Emoticones */
+.emoticon {
+    position: absolute;
+    font-size: 2em;
+    animation: flotar 10s linear infinite;
+}
+
+/* Animaciones */
+@keyframes caer {
+    0% { transform: translateY(-100vh) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(720deg); }
+}
+
+@keyframes flotar {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-100vh) rotate(360deg); }
+}
+
+/* Tarjeta */
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    z-index: 2;
+    position: relative;
+}
+
+h1 {
+    color: #e74c3c;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #555;
+    font-size: 1.3em;
+    margin-bottom: 25px;
+}
+
+.buttons {
+    display: inline-block; /* Asegura que los botones no se afecten entre sí */
+    position: relative; /* Permite posicionar elementos absolutos dentro */
+}
+
+#si {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: white;
+    display: inline-block;
+    position: relative; /* Mantiene su lugar en el flujo */
+}
+
+#no {
+    background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+    color: white;
+    position: absolute; /* Permite que se mueva libremente */
+    transition: transform 0.3s ease;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Snowburst One', cursive;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#si {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: white;
+}
+
+#no {
+    background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+    color: white;
+}
+
+#respuesta {
+    margin-top: 20px;
+    color: #e74c3c;
+    font-size: 1.4em;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+/* Estilos para el botón "No" */
+#no {
+    background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+    color: white;
+    position: relative; /* Permite mover el botón */
+    transition: transform 0.3s ease;
+}
